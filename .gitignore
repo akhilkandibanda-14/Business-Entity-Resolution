@@ -1,0 +1,22 @@
+# Dataset & Large Artifacts (Exclude from Git due to 100MB GitHub limit)
+dataset/
+artifacts/normalized/
+artifacts/validation/
+artifacts/*.parquet
+artifacts/*.tsv
+
+# Byte-compiled / Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment & IDE
+.env
+.venv
+env/
+venv/
+ENV/
+.idea/
+.vscode/
+.DS_Store
+*.log

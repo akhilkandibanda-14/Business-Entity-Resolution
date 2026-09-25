@@ -1,0 +1,7 @@
+Source,Total Rows,Missing Address,Missing Address Pct,Unique Addresses,Duplicate Addresses,Mean Addr Char Len,Median Addr Char Len,Max Addr Char Len,Min Addr Char Len,Mean Addr Word Count,Has 5/6-Digit Postcode Pct,Addr_street_st_Pct,Addr_road_rd_Pct,Addr_avenue_ave_Pct,Addr_suite_ste_Pct,Addr_floor_fl_Pct,Addr_po_box_Pct,Addr_landmark_near_opp_Pct,Addr_french_terms_Pct
+train_s1,2206821,0,0.0,2130606,76215,52.07,41.0,256,11,8.03,6.65,14.66,21.79,8.77,0.32,8.67,0.0,4.52,11.1
+train_s2,5034616,168967,3.3561,4337261,697355,47.83,37.0,249,8,7.54,7.57,13.63,20.58,8.57,0.06,7.0,1.0,4.09,5.78
+train_s3,5285603,175916,3.3282,4632764,652839,48.32,42.0,240,2,7.42,7.53,13.47,18.53,8.46,0.23,6.39,0.98,3.06,5.92
+test_s1,1732544,0,0.0,1677483,55061,57.21,50.0,268,11,8.59,4.38,10.34,19.47,7.51,0.25,9.62,0.0,5.2,20.76
+test_s2,4887273,129408,2.6479,4224783,662490,51.78,43.0,269,5,8.01,5.23,9.91,18.28,6.82,0.07,8.19,0.66,4.6,11.59
+test_s3,5082316,136098,2.6779,4456435,625881,50.08,44.0,267,5,7.72,5.19,9.58,15.89,6.75,0.19,6.84,0.64,3.52,11.82
