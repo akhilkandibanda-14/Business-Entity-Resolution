@@ -61,10 +61,10 @@ def run_phase2():
     generator = CandidateGenerator(
         use_country_partition=use_country,
         max_token_df_ratio=0.001,
-        max_token_df_absolute=5000,
+        max_token_df_absolute=500,
         min_shared_trigrams=3,
         max_trigram_df_ratio=0.005,
-        max_trigram_df_absolute=25000
+        max_trigram_df_absolute=500
     )
 
     # Step 3: Individual Blocker Performance on Dev Set
@@ -210,10 +210,19 @@ def run_phase2():
     print(f"  - Processed {len(s1_test):,} test S1 entities against {len(s2_test):,} S2 and {len(s3_test):,} S3 entities.")
     print(f"  - Total Test Candidates Generated: {len(test_cands):,} in {test_elapsed:.2f}s.")
 
-    # Save test candidates to artifacts/phase2_test_candidates.parquet
+    # Save candidate datasets to Parquet
+    os.makedirs('artifacts', exist_ok=True)
+    dev_cand_path = 'artifacts/phase2_dev_candidates.parquet'
+    val_cand_path = 'artifacts/phase2_val_candidates.parquet'
     test_cand_path = 'artifacts/phase2_test_candidates.parquet'
+
+    cands_union.to_parquet(dev_cand_path, index=False)
+    val_cands.to_parquet(val_cand_path, index=False)
     test_cands.to_parquet(test_cand_path, index=False)
-    print(f"  - Saved test candidates to {test_cand_path} (Size: {os.path.getsize(test_cand_path)/1024/1024:.2f} MB)")
+
+    print(f"  - Saved Dev candidates to {dev_cand_path} ({len(cands_union):,} rows)")
+    print(f"  - Saved Val candidates to {val_cand_path} ({len(val_cands):,} rows)")
+    print(f"  - Saved Test candidates to {test_cand_path} ({len(test_cands):,} rows)")
 
     total_runtime = time.time() - start_time
 

@@ -28,7 +28,7 @@ class CandidateGenerator:
         max_token_df_absolute: int = 500,
         min_shared_trigrams: int = 3,
         max_trigram_df_ratio: float = 0.005,
-        max_trigram_df_absolute: int = 1000
+        max_trigram_df_absolute: int = 500
     ):
         self.use_country_partition = use_country_partition
         self.country_blocker = CountryBlocker(enabled=use_country_partition)
